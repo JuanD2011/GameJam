@@ -12,6 +12,7 @@ public class IAPersonNavMeshAgent : MonoBehaviour {
     [SerializeField]
     private int currentPoint = 0;
     GameObject player;
+
     [SerializeField]
     public bool isIn;
     float buffTime = 5f;
