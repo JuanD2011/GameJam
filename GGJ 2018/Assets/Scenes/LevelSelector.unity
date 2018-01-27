@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 68292921}
   - component: {fileID: 68292923}
   - component: {fileID: 68292922}
+  - component: {fileID: 68292924}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -166,6 +167,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 68292920}
+--- !u!114 &68292924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 68292920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94348b23ad1e73143b40d37f7e06fafc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stars:
+  - {fileID: 669406779}
+  - {fileID: 2044272761}
+  - {fileID: 1485792281}
 --- !u!1 &208179686
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +193,6 @@ GameObject:
   - component: {fileID: 208179691}
   - component: {fileID: 208179690}
   - component: {fileID: 208179689}
-  - component: {fileID: 208179688}
   m_Layer: 5
   m_Name: btnLevel5
   m_TagString: Untagged
@@ -204,17 +219,6 @@ RectTransform:
   m_AnchoredPosition: {x: 269, y: 32}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &208179688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 208179686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94348b23ad1e73143b40d37f7e06fafc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &208179689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,18 +257,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 208179690}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 208179688}
-        m_MethodName: onSelectLevel
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Level5
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &208179690
@@ -466,7 +459,6 @@ GameObject:
   - component: {fileID: 569983843}
   - component: {fileID: 569983842}
   - component: {fileID: 569983841}
-  - component: {fileID: 569983840}
   m_Layer: 5
   m_Name: btnLevel2
   m_TagString: Untagged
@@ -493,17 +485,6 @@ RectTransform:
   m_AnchoredPosition: {x: -148, y: 53}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &569983840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 569983838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94348b23ad1e73143b40d37f7e06fafc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &569983841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,18 +523,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 569983842}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 569983840}
-        m_MethodName: onSelectLevel
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Level2
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &569983842
@@ -806,7 +776,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 973417898}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 68292924}
+        m_MethodName: CloseSelectLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &973417898
@@ -853,7 +834,6 @@ GameObject:
   - component: {fileID: 1011773522}
   - component: {fileID: 1011773521}
   - component: {fileID: 1011773520}
-  - component: {fileID: 1011773519}
   m_Layer: 5
   m_Name: btnLevel1
   m_TagString: Untagged
@@ -880,17 +860,6 @@ RectTransform:
   m_AnchoredPosition: {x: -244, y: -92}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1011773519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1011773517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94348b23ad1e73143b40d37f7e06fafc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1011773520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -929,18 +898,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1011773521}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1011773519}
-        m_MethodName: onSelectLevel
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Level1
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1011773521
@@ -1125,7 +1083,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1088165873}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 68292924}
+        m_MethodName: GotoLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1088165873
@@ -1847,7 +1816,6 @@ GameObject:
   - component: {fileID: 1977730188}
   - component: {fileID: 1977730187}
   - component: {fileID: 1977730186}
-  - component: {fileID: 1977730185}
   m_Layer: 5
   m_Name: btnLevel3
   m_TagString: Untagged
@@ -1874,17 +1842,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -73}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1977730185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1977730183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94348b23ad1e73143b40d37f7e06fafc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1977730186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1923,18 +1880,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1977730187}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1977730185}
-        m_MethodName: onSelectLevel
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Level3
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1977730187
@@ -1981,7 +1927,6 @@ GameObject:
   - component: {fileID: 1983213142}
   - component: {fileID: 1983213141}
   - component: {fileID: 1983213140}
-  - component: {fileID: 1983213139}
   m_Layer: 5
   m_Name: btnLevel4
   m_TagString: Untagged
@@ -2008,17 +1953,6 @@ RectTransform:
   m_AnchoredPosition: {x: 174, y: -118}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1983213139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1983213137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94348b23ad1e73143b40d37f7e06fafc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1983213140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2057,18 +1991,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1983213141}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1983213139}
-        m_MethodName: onSelectLevel
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Level4
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1983213141
