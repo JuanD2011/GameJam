@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RatMovement : MonoBehaviour {
+	private CharacterController charController;
 
-	float velMovement = 3f;
-	float dirX, dirY;
-    Transform mTransform;
+	public float velMovement = 3f;
+
 	void Start () {
-        mTransform = GetComponent<Transform>();
+		charController = GetComponent<CharacterController>();
 	}
 
 	void Update () {
-		float sentidoX = Input.GetAxis ("Horizontal") * velMovement;
-        float sentidoZ = Input.GetAxis("Vertical") * velMovement;
-		mTransform.position += new Vector3(sentidoX, 0,sentidoZ) * Time.deltaTime;
+		float sentidoX = Input.GetAxis("Horizontal");
+        float sentidoZ = Input.GetAxis("Vertical");
+
+		charController.Move((new Vector3(sentidoX, 0.0f, sentidoZ)).normalized * velMovement * Time.deltaTime);
 	}
 
 
