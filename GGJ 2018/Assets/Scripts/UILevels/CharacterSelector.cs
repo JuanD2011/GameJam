@@ -7,7 +7,7 @@ public class CharacterSelector : MonoBehaviour {
     public GameObject[] rat;
     Transform spawnPoint;
     GameObject selectCharacterMenu;
-
+    
     
     private void Start()
     {
