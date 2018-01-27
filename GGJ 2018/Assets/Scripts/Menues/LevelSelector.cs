@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class LevelSelector : MonoBehaviour {
 	private string levelId;
 
+	public GameObject[] stars;
+
 	void Start() {
 		gameObject.SetActive(false);
 
@@ -41,8 +43,8 @@ public class LevelSelector : MonoBehaviour {
 
 		(GameObject.Find("lblLevelName").GetComponent<Text>()).text = levelName;
 
-		for (int i = 1; i <= 3; i++) {
-			GameObject.Find("imgStar0" + i).SetActive(i <= difficult);
+		for (int i = 0; i < 3; i++) {
+			stars[i].SetActive(i < difficult);
 		}
 	}
 
