@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,13 +10,17 @@ public class RatMovement : MonoBehaviour {
 	void Start () {
 		charController = GetComponent<CharacterController>();
 	}
+  
+  void Update ()
+    {
+        Move();
+	}
 
-	void Update () {
-		float sentidoX = Input.GetAxis("Horizontal");
+    void Move()
+    {
+        float sentidoX = Input.GetAxis("Horizontal");
         float sentidoZ = Input.GetAxis("Vertical");
 
 		charController.Move((new Vector3(sentidoX, 0.0f, sentidoZ)).normalized * velMovement * Time.deltaTime);
-	}
-
-
+    }
 }
