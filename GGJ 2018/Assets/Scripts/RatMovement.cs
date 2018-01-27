@@ -13,8 +13,8 @@ public class RatMovement : MonoBehaviour {
 
 	void Update () {
 		float sentidoX = Input.GetAxis ("Horizontal") * velMovement;
-        float sentidoY = Input.GetAxis("Vertical") * velMovement;
-        mTransform.position += new Vector3(sentidoX, sentidoX) * Time.deltaTime;
+        float sentidoZ = Input.GetAxis("Vertical") * velMovement;
+		mTransform.position += new Vector3(sentidoX, 0,sentidoZ) * Time.deltaTime;
 	}
 
 
