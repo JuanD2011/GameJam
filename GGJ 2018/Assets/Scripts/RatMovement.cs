@@ -5,7 +5,7 @@ using UnityEngine;
 public class RatMovement : MonoBehaviour {
 	private CharacterController charController;
 
-	public float velMovement = 3f;
+	private float velMovement;
 
 	void Start () {
 		charController = GetComponent<CharacterController>();
@@ -13,14 +13,17 @@ public class RatMovement : MonoBehaviour {
   
   void Update ()
     {
+		velMovement = gameObject.GetComponent<Rat>(). velMovement;
         Move();
 	}
 
     void Move()
     {
-        float sentidoX = Input.GetAxis("Horizontal");
-        float sentidoZ = Input.GetAxis("Vertical");
+		if (!gameObject.GetComponent<Rat> ().classicTrampBool && !gameObject.GetComponent<Rat> ().cageTramp ) {
+			float sentidoX = Input.GetAxis ("Horizontal");
+			float sentidoZ = Input.GetAxis ("Vertical");
 
-		charController.Move((new Vector3(sentidoX, 0.0f, sentidoZ)).normalized * velMovement * Time.deltaTime);
+			charController.Move ((new Vector3 (sentidoX, 0.0f, sentidoZ)).normalized * velMovement * Time.deltaTime);
+		}
     }
 }
