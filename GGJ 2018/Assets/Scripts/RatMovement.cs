@@ -20,8 +20,8 @@ public class RatMovement : MonoBehaviour {
     void Move()
     {
 		if (!gameObject.GetComponent<Rat> ().classicTrampBool && !gameObject.GetComponent<Rat> ().cageTramp ) {
-			float sentidoX = Input.GetAxis ("Horizontal");
-			float sentidoZ = Input.GetAxis ("Vertical");
+			float sentidoX = Input.GetAxisRaw("Horizontal");
+			float sentidoZ = Input.GetAxisRaw("Vertical");
 
 			charController.Move ((new Vector3 (sentidoX, 0.0f, sentidoZ)).normalized * velMovement * Time.deltaTime);
 		}
