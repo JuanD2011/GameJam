@@ -20,7 +20,6 @@ public class RatMovement : MonoBehaviour {
     {
         float sentidoX = Input.GetAxis("Horizontal");
         float sentidoZ = Input.GetAxis("Vertical");
-
 		charController.Move((new Vector3(sentidoX, 0.0f, sentidoZ)).normalized * velMovement * Time.deltaTime);
     }
 }
