@@ -12,6 +12,6 @@ public class Cage : MonoBehaviour {
 	// Update is called once per frame
 
 	void Destroy(){
-
+		Destroy (gameObject);
 	}
 }

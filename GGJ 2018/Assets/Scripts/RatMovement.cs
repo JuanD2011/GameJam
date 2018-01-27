@@ -26,4 +26,11 @@ public class RatMovement : MonoBehaviour {
 			charController.Move ((new Vector3 (sentidoX, 0.0f, sentidoZ)).normalized * velMovement * Time.deltaTime);
 		}
     }
+
+	void OntriggerEnter(Collider other) {
+	
+		if (other.gameObject.tag == "Poison") {
+			velMovement /= 2;
+		}
+	}
 }
