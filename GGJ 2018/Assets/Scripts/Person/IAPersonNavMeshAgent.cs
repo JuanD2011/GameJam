@@ -6,19 +6,26 @@ using UnityEngine.AI;
 public class IAPersonNavMeshAgent : MonoBehaviour {
 
     [SerializeField]
-
     NavMeshAgent _navmesh;
     [SerializeField]
     public Transform[] waypoint;
     [SerializeField]
     private int currentPoint = 0;
-
+    GameObject player;
+    [SerializeField]
+    public bool isIn;
+    float buffTime = 5f;
+    public float initialSpeed = 3.5f;
+    float buffSpeed = 6f;
     void start()
     {
+        //player = GameObject.FindGameObjectWithTag("Player");
         _navmesh = GetComponent<NavMeshAgent>();
+        initialSpeed = _navmesh.speed;
     }
     void Update()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         if (currentPoint == waypoint.Length - 1)
         {
             currentPoint = 0;
@@ -31,10 +38,35 @@ public class IAPersonNavMeshAgent : MonoBehaviour {
     }
     void SetDestination()
     {
-        if (waypoint[currentPoint] != null)
+        if(isIn == false)
         {
-            _navmesh.SetDestination(waypoint[currentPoint].position);
-   
+            if (waypoint[currentPoint] != null)
+            {
+                _navmesh.SetDestination(waypoint[currentPoint].position);
+            }
+        }
+        else
+        {
+            if (player != null)
+            {
+                _navmesh.SetDestination(player.transform.position);
+                _navmesh.speed = buffSpeed;
+                Invoke("nerf", buffTime);
+            }            
+        }
+    }
+    
+    void nerf()
+    {
+        _navmesh.speed = initialSpeed;
+        isIn = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            isIn = true;
         }
     }
     /*
