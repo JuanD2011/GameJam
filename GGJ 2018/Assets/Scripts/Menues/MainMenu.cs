@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour {
 
 	public void onStartGame() {
-        SceneManager.LoadScene(1);
-		//SceneManager.LoadScene("LevelSelector");
+		SceneManager.LoadScene("LevelSelector");
 	}
 
 	public void onLoadCredits() {

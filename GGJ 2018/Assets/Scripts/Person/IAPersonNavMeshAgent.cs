@@ -12,12 +12,11 @@ public class IAPersonNavMeshAgent : MonoBehaviour {
     [SerializeField]
     private int currentPoint = 0;
     GameObject player;
-
     [SerializeField]
     public bool isIn;
-    float buffTime = 6f;
-    public float initialSpeed;
-    public float buffSpeed = 6f;
+    float buffTime = 5f;
+    public float initialSpeed = 3.5f;
+    float buffSpeed = 6f;
     void start()
     {
         //player = GameObject.FindGameObjectWithTag("Player");
@@ -27,23 +26,19 @@ public class IAPersonNavMeshAgent : MonoBehaviour {
     void Update()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-      
-        
+        if (currentPoint == waypoint.Length - 1)
+        {
+            currentPoint = 0;
+        }
+        if (transform.position.x == waypoint[currentPoint].position.x)
+        {
+            currentPoint++;
+        }
+        SetDestination();
     }
-	void FixedUpdate(){
-		if (currentPoint == waypoint.Length - 1)
-		{
-			currentPoint = 0;
-		}
-		if (transform.position.x == waypoint[currentPoint].position.x)
-		{
-			currentPoint++;
-		}
-		SetDestination();
-	}
     void SetDestination()
     {
-        if(isIn == false )
+        if(isIn == false)
         {
             if (waypoint[currentPoint] != null)
             {
@@ -52,7 +47,7 @@ public class IAPersonNavMeshAgent : MonoBehaviour {
         }
         else
         {
-			if (player != null )
+            if (player != null)
             {
                 _navmesh.SetDestination(player.transform.position);
                 _navmesh.speed = buffSpeed;
@@ -66,14 +61,14 @@ public class IAPersonNavMeshAgent : MonoBehaviour {
         _navmesh.speed = initialSpeed;
         isIn = false;
     }
-	private void OnTriggerEnter(Collider other)
-	{
-		if(other.gameObject.tag == "Player" && !other.gameObject.GetComponent<Rat>().invisibilitybool)
-		{
-			isIn = true;
-		}
-	}
-  
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            isIn = true;
+        }
+    }
     /*
     void IAPatrol()
     {
