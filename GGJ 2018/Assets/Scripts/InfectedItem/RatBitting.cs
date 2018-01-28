@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RatBitting : MonoBehaviour
 {
     public bool inRange = false;
     public bool iCanInfectate = false;
+	public GameObject infectateText;
 
     IInfectable iInfectable;
     
@@ -40,6 +42,7 @@ public class RatBitting : MonoBehaviour
         {
             iCanInfectate = true;
             iInfectable.Infect(iCanInfectate);
+			infectateText.SetActive (true);
         }
         else
         {
@@ -48,6 +51,7 @@ public class RatBitting : MonoBehaviour
                 iInfectable.Uninfected();
             }
             iCanInfectate = false;
+			infectateText.SetActive (false);
         }
     }
 }
