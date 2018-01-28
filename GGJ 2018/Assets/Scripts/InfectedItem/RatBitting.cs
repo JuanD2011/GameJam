@@ -8,6 +8,13 @@ public class RatBitting : MonoBehaviour
     public bool iCanInfectate = false;
 
     IInfectable iInfectable;
+
+    AudioSource mouseGnaw;
+
+    void Start()
+    {
+        mouseGnaw = transform.Find("MouseGnawSound").GetComponent<AudioSource>();
+    }
     
     void Update ()
     {
@@ -40,6 +47,7 @@ public class RatBitting : MonoBehaviour
         {
             iCanInfectate = true;
             iInfectable.Infect(iCanInfectate);
+            mouseGnaw.mute = false;
         }
         else
         {
@@ -48,6 +56,7 @@ public class RatBitting : MonoBehaviour
                 iInfectable.Uninfected();
             }
             iCanInfectate = false;
+            mouseGnaw.mute = true;
         }
     }
 }

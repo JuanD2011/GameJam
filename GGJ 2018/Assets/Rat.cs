@@ -19,9 +19,7 @@ public class Rat : MonoBehaviour
 
 	public bool muerte = false;
 
-
-	void Update () {
-	}
+    
 
 	public void Velocidad () {
 		Invoke ("ApagarVelocidad", perception);

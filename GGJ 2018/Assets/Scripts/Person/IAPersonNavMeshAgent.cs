@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class IAPersonNavMeshAgent : MonoBehaviour {
 
+    AudioSource wShout;
+
     [SerializeField]
     NavMeshAgent _navmesh;
     [SerializeField]
@@ -18,11 +20,13 @@ public class IAPersonNavMeshAgent : MonoBehaviour {
     float buffTime = 5f;
     public float initialSpeed = 3.5f;
     float buffSpeed = 6f;
-    void start()
+
+    void Start()
     {
         //player = GameObject.FindGameObjectWithTag("Player");
         _navmesh = GetComponent<NavMeshAgent>();
         initialSpeed = _navmesh.speed;
+        wShout = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -70,7 +74,9 @@ public class IAPersonNavMeshAgent : MonoBehaviour {
 	{
 		if(other.gameObject.tag == "Player" && !other.gameObject.GetComponent<Rat>().invisibilitybool)
 		{
-			isIn = true;
+            wShout.Play();
+            isIn = true;
+            
 		}
 	}
   

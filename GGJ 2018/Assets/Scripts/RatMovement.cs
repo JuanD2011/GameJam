@@ -9,8 +9,11 @@ public class RatMovement : MonoBehaviour {
 	float velRotax = 5f;
 	float velRotay = 5f;
 
+    AudioSource poisonSound;
+
 	void Start () {
 		charController = GetComponent<CharacterController>();
+        poisonSound = transform.Find("Poison").GetComponent<AudioSource>();
 	}
   
   void Update ()
@@ -43,6 +46,7 @@ public class RatMovement : MonoBehaviour {
 		
 		if (other.gameObject.tag == "Poison") {
 			gameObject.GetComponent<Rat>(). velMovement/=gameObject.GetComponent<Rat>(). poison;
+            poisonSound.mute = false;
 		}
 	}
 
@@ -50,6 +54,7 @@ public class RatMovement : MonoBehaviour {
 
 		if (other.gameObject.tag == "Poison") {
 			gameObject.GetComponent<Rat>(). velMovement*=gameObject.GetComponent<Rat>(). poison;
+            poisonSound.mute = true;
 		}
 	}
 }
