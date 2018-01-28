@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PercentageOfInfection : MonoBehaviour
 {
-    public static float percentage = 0f;
+    public static float percentage;
     public Text percentageCounter;
     public Text winText;
 
@@ -16,6 +16,7 @@ public class PercentageOfInfection : MonoBehaviour
 
     private void Start()
     {
+		percentage = 0f;
         winText.gameObject.SetActive(false);
 
         buttonBackToLevelMenu = GameObject.Find("BackToLevelMenu");
