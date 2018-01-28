@@ -9,13 +9,15 @@ public class Rat : MonoBehaviour
     public float invicibility = 10f;
     public float invisibility = 10f;
 	public float classicTramp = 4f;
-	public float poison = 4f;
+	public float poison = 2f;
 	public float tramp = 8f;
 
 	public bool invicibilitybool = false;
 	public bool invisibilitybool = false;
 	public bool classicTrampBool = false;
 	public bool cageTramp = false;
+
+	public bool muerte = false;
 
 
 	void Update () {

@@ -8,12 +8,7 @@ public class RatBitting : MonoBehaviour
     public bool iCanInfectate = false;
 
     IInfectable iInfectable;
-
-    void Start ()
-    {
-
-    }
-
+    
     void Update ()
     {
         Infectated();

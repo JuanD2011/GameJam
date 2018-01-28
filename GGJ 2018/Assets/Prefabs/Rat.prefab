@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 114929499551395652}
   - component: {fileID: 143071871629897098}
   - component: {fileID: 54000919466953090}
-  - component: {fileID: 114457213266160824}
+  - component: {fileID: 114010197807403438}
   m_Layer: 0
   m_Name: Rat
   m_TagString: Player
@@ -184,7 +184,7 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1150895653000804}
   m_Enabled: 1
---- !u!114 &114457213266160824
+--- !u!114 &114010197807403438
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -195,17 +195,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 942f80850d2d2c440a1b426cc74ebaf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velMovement: 43.71
+  velMovement: 3
   perception: 10
   invicibility: 10
   invisibility: 10
   classicTramp: 4
-  poison: 4
+  poison: 2
   tramp: 8
   invicibilitybool: 0
   invisibilitybool: 0
   classicTrampBool: 0
   cageTramp: 0
+  muerte: 0
 --- !u!114 &114929499551395652
 MonoBehaviour:
   m_ObjectHideFlags: 1
