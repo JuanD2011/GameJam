@@ -15,9 +15,9 @@ public class IAPersonNavMeshAgent : MonoBehaviour {
 
     [SerializeField]
     public bool isIn;
-    float buffTime = 5f;
-    public float initialSpeed = 3.5f;
-    float buffSpeed = 6f;
+    float buffTime = 6f;
+    public float initialSpeed;
+    public float buffSpeed = 6f;
     void start()
     {
         //player = GameObject.FindGameObjectWithTag("Player");
