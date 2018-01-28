@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 54637997791931626}
   - component: {fileID: 114194279133478856}
   - component: {fileID: 114181178507829110}
+  - component: {fileID: 114024769605198576}
   m_Layer: 0
   m_Name: FastRat
   m_TagString: Player
@@ -55,7 +56,6 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -71,14 +71,12 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33471099801845930
 MeshFilter:
@@ -114,6 +112,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114024769605198576
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1029344865907832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 942f80850d2d2c440a1b426cc74ebaf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velMovement: 3
+  perception: 10
+  invicibility: 10
+  invisibility: 10
+  classicTramp: 4
+  poison: 2
+  tramp: 8
+  invicibilitybool: 0
+  invisibilitybool: 0
+  classicTrampBool: 0
+  cageTramp: 0
+  muerte: 0
 --- !u!114 &114181178507829110
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -136,6 +157,7 @@ MonoBehaviour:
   invisibilitybool: 0
   classicTrampBool: 0
   cageTramp: 0
+  muerte: 0
 --- !u!114 &114194279133478856
 MonoBehaviour:
   m_ObjectHideFlags: 1
