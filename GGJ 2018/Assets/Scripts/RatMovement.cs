@@ -17,20 +17,26 @@ public class RatMovement : MonoBehaviour {
     {
 		velMovement = gameObject.GetComponent<Rat>(). velMovement;
         Move();
+		if (!gameObject.GetComponent<Rat> ().muerte) {
+			float h = velRotax * Input.GetAxis ("Mouse X");
+			float v = velRotay * Input.GetAxis ("Mouse Y");
 
-		float h = velRotax * Input.GetAxis ("Mouse X");
-		float v = velRotay * Input.GetAxis ("Mouse Y");
-
-		transform.Rotate (0, h, 0);
+			transform.Rotate (0, h, 0);
+		}
 	}
 
     void Move()
     {
 		if (!gameObject.GetComponent<Rat> ().classicTrampBool && !gameObject.GetComponent<Rat> ().cageTramp && !gameObject.GetComponent<Rat> ().muerte) {
-			float sentidoX = Input.GetAxis ("Horizontal");
-			float sentidoZ = Input.GetAxis ("Vertical");
-
-			charController.Move ((new Vector3 (sentidoX, 0.0f, sentidoZ)).normalized * velMovement * Time.deltaTime);
+			float sentidoX = Input.GetAxisRaw ("Horizontal");
+			float sentidoZ = Input.GetAxisRaw ("Vertical");
+			if (Input.GetButton ("Vertical")) {
+				charController.Move ((transform.forward).normalized * velMovement * Time.deltaTime * sentidoZ);
+			}
+			if (Input.GetButton ("Horizontal")) {
+				charController.Move ((transform.right).normalized * velMovement * Time.deltaTime * sentidoX);
+			}
+			//charController.Move ((new Vector3 (sentidoX, 0.0f, sentidoZ)).normalized * velMovement * Time.deltaTime);
 		}
     }
 
