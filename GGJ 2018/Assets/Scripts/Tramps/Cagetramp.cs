@@ -12,7 +12,7 @@ public class Cagetramp : MonoBehaviour {
 		if ((other.gameObject.tag == "Player") && !used && !other.gameObject.GetComponent<Rat>().invicibilitybool) {
 			other.gameObject.GetComponent<Rat> ().cageTramp = true;
 			other.gameObject.SendMessage ("CageTramp");
-			Instantiate (jaula, new Vector3(other.transform.position.x + 1, other.transform.position.y + 4, other.transform.position.z + 1), other.transform.rotation);
+			Instantiate (jaula, new Vector3(other.transform.position.x, other.transform.position.y + 4, other.transform.position.z), other.transform.rotation);
 			used = true;
 			Destroy (gameObject);
 		}

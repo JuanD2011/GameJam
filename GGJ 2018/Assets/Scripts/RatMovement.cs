@@ -19,7 +19,7 @@ public class RatMovement : MonoBehaviour {
 
     void Move()
     {
-		if (!gameObject.GetComponent<Rat> ().classicTrampBool && !gameObject.GetComponent<Rat> ().cageTramp ) {
+		if (!gameObject.GetComponent<Rat> ().classicTrampBool && !gameObject.GetComponent<Rat> ().cageTramp && !gameObject.GetComponent<Rat> ().muerte) {
 			float sentidoX = Input.GetAxis ("Horizontal");
 			float sentidoZ = Input.GetAxis ("Vertical");
 
@@ -27,10 +27,17 @@ public class RatMovement : MonoBehaviour {
 		}
     }
 
-	void OntriggerEnter(Collider other) {
-	
+	void OnTriggerEnter(Collider other) {
+		
 		if (other.gameObject.tag == "Poison") {
-			velMovement /= 2;
+			gameObject.GetComponent<Rat>(). velMovement/=gameObject.GetComponent<Rat>(). poison;
+		}
+	}
+
+	void OnTriggerExit(Collider other) {
+
+		if (other.gameObject.tag == "Poison") {
+			gameObject.GetComponent<Rat>(). velMovement*=gameObject.GetComponent<Rat>(). poison;
 		}
 	}
 }

@@ -39,7 +39,7 @@ public class IAPersonNavMeshAgent : MonoBehaviour {
     }
     void SetDestination()
     {
-        if(isIn == false)
+        if(isIn == false )
         {
             if (waypoint[currentPoint] != null)
             {
@@ -48,7 +48,7 @@ public class IAPersonNavMeshAgent : MonoBehaviour {
         }
         else
         {
-            if (player != null)
+			if (player != null )
             {
                 _navmesh.SetDestination(player.transform.position);
                 _navmesh.speed = buffSpeed;
@@ -62,14 +62,14 @@ public class IAPersonNavMeshAgent : MonoBehaviour {
         _navmesh.speed = initialSpeed;
         isIn = false;
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag == "Player")
-        {
-            isIn = true;
-        }
-    }
+	private void OnTriggerEnter(Collider other)
+	{
+		if(other.gameObject.tag == "Player" && !other.gameObject.GetComponent<Rat>().invisibilitybool)
+		{
+			isIn = true;
+		}
+	}
+  
     /*
     void IAPatrol()
     {
