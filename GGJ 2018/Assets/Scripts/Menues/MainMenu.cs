@@ -11,6 +11,10 @@ public class MainMenu : MonoBehaviour {
 	}
 
 	public void onLoadCredits() {
-		SceneManager.LoadScene("Level1");
+		SceneManager.LoadScene("Credits");
+	}
+
+	public void onReturnToMenu() {
+		SceneManager.LoadScene("MainMenu");
 	}
 }
