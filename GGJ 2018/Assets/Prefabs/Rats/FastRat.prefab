@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114194279133478856}
   - component: {fileID: 114181178507829110}
   - component: {fileID: 114024769605198576}
+  - component: {fileID: 114351084057046186}
   m_Layer: 0
   m_Name: FastRat
   m_TagString: Player
@@ -56,6 +57,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -71,12 +73,14 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33471099801845930
 MeshFilter:
@@ -169,6 +173,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29c23e12cb0c90e409c1d89a148f37ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114351084057046186
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1029344865907832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 037426c972bbbcf419b07c6ce22e4fc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inRange: 0
+  iCanInfectate: 0
 --- !u!143 &143264923652965370
 CharacterController:
   m_ObjectHideFlags: 1

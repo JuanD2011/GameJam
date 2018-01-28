@@ -6,6 +6,8 @@ public class RatMovement : MonoBehaviour {
 	private CharacterController charController;
 
 	private float velMovement;
+	float velRotax = 5f;
+	float velRotay = 5f;
 
 	void Start () {
 		charController = GetComponent<CharacterController>();
@@ -15,6 +17,11 @@ public class RatMovement : MonoBehaviour {
     {
 		velMovement = gameObject.GetComponent<Rat>(). velMovement;
         Move();
+
+		float h = velRotax * Input.GetAxis ("Mouse X");
+		float v = velRotay * Input.GetAxis ("Mouse Y");
+
+		transform.Rotate (0, h, 0);
 	}
 
     void Move()
@@ -26,6 +33,11 @@ public class RatMovement : MonoBehaviour {
 			charController.Move ((new Vector3 (sentidoX, 0.0f, sentidoZ)).normalized * velMovement * Time.deltaTime);
 		}
     }
+
+	void rotar(){
+	
+
+	}
 
 	void OnTriggerEnter(Collider other) {
 		

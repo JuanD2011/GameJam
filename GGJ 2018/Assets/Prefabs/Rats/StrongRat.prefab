@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114149319292281908}
   - component: {fileID: 114920803453656046}
   - component: {fileID: 114973882177621510}
+  - component: {fileID: 114356473698139126}
   m_Layer: 0
   m_Name: StrongRat
   m_TagString: Player
@@ -56,6 +57,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -71,12 +73,14 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33837595981529996
 MeshFilter:
@@ -123,6 +127,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29c23e12cb0c90e409c1d89a148f37ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114356473698139126
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1224156721303778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 037426c972bbbcf419b07c6ce22e4fc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inRange: 0
+  iCanInfectate: 0
 --- !u!114 &114920803453656046
 MonoBehaviour:
   m_ObjectHideFlags: 1

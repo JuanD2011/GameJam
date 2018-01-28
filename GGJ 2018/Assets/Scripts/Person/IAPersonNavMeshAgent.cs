@@ -27,16 +27,20 @@ public class IAPersonNavMeshAgent : MonoBehaviour {
     void Update()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        if (currentPoint == waypoint.Length - 1)
-        {
-            currentPoint = 0;
-        }
-        if (transform.position.x == waypoint[currentPoint].position.x)
-        {
-            currentPoint++;
-        }
-        SetDestination();
+      
+        
     }
+	void FixedUpdate(){
+		if (currentPoint == waypoint.Length - 1)
+		{
+			currentPoint = 0;
+		}
+		if (transform.position.x == waypoint[currentPoint].position.x)
+		{
+			currentPoint++;
+		}
+		SetDestination();
+	}
     void SetDestination()
     {
         if(isIn == false )
